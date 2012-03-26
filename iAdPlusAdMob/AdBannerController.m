@@ -32,7 +32,6 @@
 //
 
 #import "AdBannerController.h"
-#import "AdBannerConstants.h"
 
 @interface AdBannerController()
 {
@@ -192,7 +191,7 @@ static AdBannerController *_sharedInstance;
 - (void)setDelegate:(id<AdBannerControllerDelegate>)adelegate
 {
 	_delegate = adelegate;
-	if (shouldDisplayAdMobAds)
+	if (_shouldDisplayAdMobAds)
 	{
 		self.adMobBannerView.rootViewController = (UIViewController *)_delegate;
 		if (_delegate != nil)
