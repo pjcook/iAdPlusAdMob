@@ -1,0 +1,544 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E4809E3151C682800058FAE /* AdBannerConstants.h in Resources */ = {isa = PBXBuildFile; fileRef = 2E4809E2151C682800058FAE /* AdBannerConstants.h */; };
+		2E5DE4B5151B133C00C8E2BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5DE4B4151B133C00C8E2BC /* UIKit.framework */; };
+		2E5DE4B7151B133C00C8E2BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5DE4B6151B133C00C8E2BC /* Foundation.framework */; };
+		2E5DE4B9151B133C00C8E2BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5DE4B8151B133C00C8E2BC /* CoreGraphics.framework */; };
+		2E5DE4BF151B133C00C8E2BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E5DE4BD151B133C00C8E2BC /* InfoPlist.strings */; };
+		2E5DE4C1151B133C00C8E2BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5DE4C0151B133C00C8E2BC /* main.m */; };
+		2E5DE4C5151B133C00C8E2BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5DE4C4151B133C00C8E2BC /* AppDelegate.m */; };
+		2E5DE4C8151B133C00C8E2BC /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E5DE4C6151B133C00C8E2BC /* MainStoryboard_iPhone.storyboard */; };
+		2E5DE4CB151B133C00C8E2BC /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E5DE4C9151B133C00C8E2BC /* MainStoryboard_iPad.storyboard */; };
+		2E5DE4CE151B133C00C8E2BC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5DE4CD151B133C00C8E2BC /* ViewController.m */; };
+		2E5DE4D6151B133D00C8E2BC /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5DE4D5151B133D00C8E2BC /* SenTestingKit.framework */; };
+		2E5DE4D7151B133D00C8E2BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5DE4B4151B133C00C8E2BC /* UIKit.framework */; };
+		2E5DE4D8151B133D00C8E2BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5DE4B6151B133C00C8E2BC /* Foundation.framework */; };
+		2E5DE4E0151B133D00C8E2BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E5DE4DE151B133D00C8E2BC /* InfoPlist.strings */; };
+		2E5DE4E3151B133D00C8E2BC /* iAdPlusAdMobTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5DE4E2151B133D00C8E2BC /* iAdPlusAdMobTests.m */; };
+		2E5DE4FA151B15E200C8E2BC /* AdBannerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5DE4F7151B15E100C8E2BC /* AdBannerController.m */; };
+		2E5DE4FB151B15E200C8E2BC /* AdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5DE4F9151B15E100C8E2BC /* AdViewController.m */; };
+		2E5DE4FD151B1B0200C8E2BC /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5DE4FC151B1B0200C8E2BC /* iAd.framework */; };
+		2E5DE4FF151B1B0B00C8E2BC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5DE4FE151B1B0B00C8E2BC /* AudioToolbox.framework */; };
+		2E5DE501151B1B1300C8E2BC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5DE500151B1B1300C8E2BC /* MessageUI.framework */; };
+		2E5DE503151B1B1A00C8E2BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5DE502151B1B1A00C8E2BC /* SystemConfiguration.framework */; };
+		2E5DE50D151B1C5E00C8E2BC /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5DE50B151B1C5E00C8E2BC /* libGoogleAdMobAds.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2E5DE4D9151B133D00C8E2BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2E5DE4A7151B133C00C8E2BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E5DE4AF151B133C00C8E2BC;
+			remoteInfo = iAdPlusAdMob;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2E4809E2151C682800058FAE /* AdBannerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdBannerConstants.h; sourceTree = "<group>"; };
+		2E5DE4B0151B133C00C8E2BC /* iAdPlusAdMob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iAdPlusAdMob.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E5DE4B4151B133C00C8E2BC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2E5DE4B6151B133C00C8E2BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2E5DE4B8151B133C00C8E2BC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2E5DE4BC151B133C00C8E2BC /* iAdPlusAdMob-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iAdPlusAdMob-Info.plist"; sourceTree = "<group>"; };
+		2E5DE4BE151B133C00C8E2BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2E5DE4C0151B133C00C8E2BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2E5DE4C2151B133C00C8E2BC /* iAdPlusAdMob-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iAdPlusAdMob-Prefix.pch"; sourceTree = "<group>"; };
+		2E5DE4C3151B133C00C8E2BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2E5DE4C4151B133C00C8E2BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2E5DE4C7151B133C00C8E2BC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		2E5DE4CA151B133C00C8E2BC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		2E5DE4CC151B133C00C8E2BC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2E5DE4CD151B133C00C8E2BC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2E5DE4D4151B133D00C8E2BC /* iAdPlusAdMobTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iAdPlusAdMobTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E5DE4D5151B133D00C8E2BC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		2E5DE4DD151B133D00C8E2BC /* iAdPlusAdMobTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iAdPlusAdMobTests-Info.plist"; sourceTree = "<group>"; };
+		2E5DE4DF151B133D00C8E2BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2E5DE4E1151B133D00C8E2BC /* iAdPlusAdMobTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iAdPlusAdMobTests.h; sourceTree = "<group>"; };
+		2E5DE4E2151B133D00C8E2BC /* iAdPlusAdMobTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iAdPlusAdMobTests.m; sourceTree = "<group>"; };
+		2E5DE4F6151B15E100C8E2BC /* AdBannerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdBannerController.h; sourceTree = "<group>"; };
+		2E5DE4F7151B15E100C8E2BC /* AdBannerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdBannerController.m; sourceTree = "<group>"; };
+		2E5DE4F8151B15E100C8E2BC /* AdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdViewController.h; sourceTree = "<group>"; };
+		2E5DE4F9151B15E100C8E2BC /* AdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdViewController.m; sourceTree = "<group>"; };
+		2E5DE4FC151B1B0200C8E2BC /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		2E5DE4FE151B1B0B00C8E2BC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		2E5DE500151B1B1300C8E2BC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		2E5DE502151B1B1A00C8E2BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2E5DE505151B1C5E00C8E2BC /* GADBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerView.h; sourceTree = "<group>"; };
+		2E5DE506151B1C5E00C8E2BC /* GADBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerViewDelegate.h; sourceTree = "<group>"; };
+		2E5DE507151B1C5E00C8E2BC /* GADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitial.h; sourceTree = "<group>"; };
+		2E5DE508151B1C5E00C8E2BC /* GADInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitialDelegate.h; sourceTree = "<group>"; };
+		2E5DE509151B1C5E00C8E2BC /* GADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequest.h; sourceTree = "<group>"; };
+		2E5DE50A151B1C5E00C8E2BC /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequestError.h; sourceTree = "<group>"; };
+		2E5DE50B151B1C5E00C8E2BC /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
+		2E5DE50C151B1C5E00C8E2BC /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2E5DE4AD151B133C00C8E2BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E5DE503151B1B1A00C8E2BC /* SystemConfiguration.framework in Frameworks */,
+				2E5DE501151B1B1300C8E2BC /* MessageUI.framework in Frameworks */,
+				2E5DE4FF151B1B0B00C8E2BC /* AudioToolbox.framework in Frameworks */,
+				2E5DE4FD151B1B0200C8E2BC /* iAd.framework in Frameworks */,
+				2E5DE4B5151B133C00C8E2BC /* UIKit.framework in Frameworks */,
+				2E5DE4B7151B133C00C8E2BC /* Foundation.framework in Frameworks */,
+				2E5DE4B9151B133C00C8E2BC /* CoreGraphics.framework in Frameworks */,
+				2E5DE50D151B1C5E00C8E2BC /* libGoogleAdMobAds.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E5DE4D0151B133D00C8E2BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E5DE4D6151B133D00C8E2BC /* SenTestingKit.framework in Frameworks */,
+				2E5DE4D7151B133D00C8E2BC /* UIKit.framework in Frameworks */,
+				2E5DE4D8151B133D00C8E2BC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E5DE4A5151B133C00C8E2BC = {
+			isa = PBXGroup;
+			children = (
+				2E5DE4BA151B133C00C8E2BC /* iAdPlusAdMob */,
+				2E5DE4EC151B135700C8E2BC /* Libraries */,
+				2E5DE4DB151B133D00C8E2BC /* iAdPlusAdMobTests */,
+				2E5DE4B3151B133C00C8E2BC /* Frameworks */,
+				2E5DE4B1151B133C00C8E2BC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2E5DE4B1151B133C00C8E2BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2E5DE4B0151B133C00C8E2BC /* iAdPlusAdMob.app */,
+				2E5DE4D4151B133D00C8E2BC /* iAdPlusAdMobTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2E5DE4B3151B133C00C8E2BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E5DE502151B1B1A00C8E2BC /* SystemConfiguration.framework */,
+				2E5DE500151B1B1300C8E2BC /* MessageUI.framework */,
+				2E5DE4FE151B1B0B00C8E2BC /* AudioToolbox.framework */,
+				2E5DE4FC151B1B0200C8E2BC /* iAd.framework */,
+				2E5DE4B4151B133C00C8E2BC /* UIKit.framework */,
+				2E5DE4B6151B133C00C8E2BC /* Foundation.framework */,
+				2E5DE4B8151B133C00C8E2BC /* CoreGraphics.framework */,
+				2E5DE4D5151B133D00C8E2BC /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2E5DE4BA151B133C00C8E2BC /* iAdPlusAdMob */ = {
+			isa = PBXGroup;
+			children = (
+				2E5DE4C3151B133C00C8E2BC /* AppDelegate.h */,
+				2E5DE4C4151B133C00C8E2BC /* AppDelegate.m */,
+				2E5DE4C6151B133C00C8E2BC /* MainStoryboard_iPhone.storyboard */,
+				2E5DE4C9151B133C00C8E2BC /* MainStoryboard_iPad.storyboard */,
+				2E5DE4CC151B133C00C8E2BC /* ViewController.h */,
+				2E5DE4CD151B133C00C8E2BC /* ViewController.m */,
+				2E5DE4BB151B133C00C8E2BC /* Supporting Files */,
+			);
+			path = iAdPlusAdMob;
+			sourceTree = "<group>";
+		};
+		2E5DE4BB151B133C00C8E2BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2E5DE4BC151B133C00C8E2BC /* iAdPlusAdMob-Info.plist */,
+				2E5DE4BD151B133C00C8E2BC /* InfoPlist.strings */,
+				2E5DE4C0151B133C00C8E2BC /* main.m */,
+				2E5DE4C2151B133C00C8E2BC /* iAdPlusAdMob-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2E5DE4DB151B133D00C8E2BC /* iAdPlusAdMobTests */ = {
+			isa = PBXGroup;
+			children = (
+				2E5DE4E1151B133D00C8E2BC /* iAdPlusAdMobTests.h */,
+				2E5DE4E2151B133D00C8E2BC /* iAdPlusAdMobTests.m */,
+				2E5DE4DC151B133D00C8E2BC /* Supporting Files */,
+			);
+			path = iAdPlusAdMobTests;
+			sourceTree = "<group>";
+		};
+		2E5DE4DC151B133D00C8E2BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2E5DE4DD151B133D00C8E2BC /* iAdPlusAdMobTests-Info.plist */,
+				2E5DE4DE151B133D00C8E2BC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2E5DE4EC151B135700C8E2BC /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				2E5DE4ED151B136600C8E2BC /* iAdPlusAdMob */,
+				2E5DE504151B1C5E00C8E2BC /* GoogleAdMobAdsSDKiOS-5.0.5 */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		2E5DE4ED151B136600C8E2BC /* iAdPlusAdMob */ = {
+			isa = PBXGroup;
+			children = (
+				2E5DE4F6151B15E100C8E2BC /* AdBannerController.h */,
+				2E5DE4F7151B15E100C8E2BC /* AdBannerController.m */,
+				2E5DE4F8151B15E100C8E2BC /* AdViewController.h */,
+				2E5DE4F9151B15E100C8E2BC /* AdViewController.m */,
+				2E4809E2151C682800058FAE /* AdBannerConstants.h */,
+			);
+			name = iAdPlusAdMob;
+			path = ../../iAdPlusAdMob;
+			sourceTree = "<group>";
+		};
+		2E5DE504151B1C5E00C8E2BC /* GoogleAdMobAdsSDKiOS-5.0.5 */ = {
+			isa = PBXGroup;
+			children = (
+				2E5DE505151B1C5E00C8E2BC /* GADBannerView.h */,
+				2E5DE506151B1C5E00C8E2BC /* GADBannerViewDelegate.h */,
+				2E5DE507151B1C5E00C8E2BC /* GADInterstitial.h */,
+				2E5DE508151B1C5E00C8E2BC /* GADInterstitialDelegate.h */,
+				2E5DE509151B1C5E00C8E2BC /* GADRequest.h */,
+				2E5DE50A151B1C5E00C8E2BC /* GADRequestError.h */,
+				2E5DE50B151B1C5E00C8E2BC /* libGoogleAdMobAds.a */,
+				2E5DE50C151B1C5E00C8E2BC /* README.txt */,
+			);
+			name = "GoogleAdMobAdsSDKiOS-5.0.5";
+			path = "../../../iAdPlus/Libraries/GoogleAdMobAdsSDKiOS-5.0.5";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2E5DE4AF151B133C00C8E2BC /* iAdPlusAdMob */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E5DE4E6151B133D00C8E2BC /* Build configuration list for PBXNativeTarget "iAdPlusAdMob" */;
+			buildPhases = (
+				2E5DE4AC151B133C00C8E2BC /* Sources */,
+				2E5DE4AD151B133C00C8E2BC /* Frameworks */,
+				2E5DE4AE151B133C00C8E2BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iAdPlusAdMob;
+			productName = iAdPlusAdMob;
+			productReference = 2E5DE4B0151B133C00C8E2BC /* iAdPlusAdMob.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2E5DE4D3151B133D00C8E2BC /* iAdPlusAdMobTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E5DE4E9151B133D00C8E2BC /* Build configuration list for PBXNativeTarget "iAdPlusAdMobTests" */;
+			buildPhases = (
+				2E5DE4CF151B133D00C8E2BC /* Sources */,
+				2E5DE4D0151B133D00C8E2BC /* Frameworks */,
+				2E5DE4D1151B133D00C8E2BC /* Resources */,
+				2E5DE4D2151B133D00C8E2BC /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E5DE4DA151B133D00C8E2BC /* PBXTargetDependency */,
+			);
+			name = iAdPlusAdMobTests;
+			productName = iAdPlusAdMobTests;
+			productReference = 2E5DE4D4151B133D00C8E2BC /* iAdPlusAdMobTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2E5DE4A7151B133C00C8E2BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 2E5DE4AA151B133C00C8E2BC /* Build configuration list for PBXProject "iAdPlusAdMob" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2E5DE4A5151B133C00C8E2BC;
+			productRefGroup = 2E5DE4B1151B133C00C8E2BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2E5DE4AF151B133C00C8E2BC /* iAdPlusAdMob */,
+				2E5DE4D3151B133D00C8E2BC /* iAdPlusAdMobTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2E5DE4AE151B133C00C8E2BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E5DE4BF151B133C00C8E2BC /* InfoPlist.strings in Resources */,
+				2E5DE4C8151B133C00C8E2BC /* MainStoryboard_iPhone.storyboard in Resources */,
+				2E5DE4CB151B133C00C8E2BC /* MainStoryboard_iPad.storyboard in Resources */,
+				2E4809E3151C682800058FAE /* AdBannerConstants.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E5DE4D1151B133D00C8E2BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E5DE4E0151B133D00C8E2BC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E5DE4D2151B133D00C8E2BC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2E5DE4AC151B133C00C8E2BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E5DE4C1151B133C00C8E2BC /* main.m in Sources */,
+				2E5DE4C5151B133C00C8E2BC /* AppDelegate.m in Sources */,
+				2E5DE4CE151B133C00C8E2BC /* ViewController.m in Sources */,
+				2E5DE4FA151B15E200C8E2BC /* AdBannerController.m in Sources */,
+				2E5DE4FB151B15E200C8E2BC /* AdViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E5DE4CF151B133D00C8E2BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E5DE4E3151B133D00C8E2BC /* iAdPlusAdMobTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2E5DE4DA151B133D00C8E2BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E5DE4AF151B133C00C8E2BC /* iAdPlusAdMob */;
+			targetProxy = 2E5DE4D9151B133D00C8E2BC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2E5DE4BD151B133C00C8E2BC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E5DE4BE151B133C00C8E2BC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2E5DE4C6151B133C00C8E2BC /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E5DE4C7151B133C00C8E2BC /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		2E5DE4C9151B133C00C8E2BC /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E5DE4CA151B133C00C8E2BC /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		2E5DE4DE151B133D00C8E2BC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E5DE4DF151B133D00C8E2BC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2E5DE4E4151B133D00C8E2BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2E5DE4E5151B133D00C8E2BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2E5DE4E7151B133D00C8E2BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iAdPlusAdMob/iAdPlusAdMob-Prefix.pch";
+				INFOPLIST_FILE = "iAdPlusAdMob/iAdPlusAdMob-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../iAdPlus/Libraries/GoogleAdMobAdsSDKiOS-5.0.5\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2E5DE4E8151B133D00C8E2BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iAdPlusAdMob/iAdPlusAdMob-Prefix.pch";
+				INFOPLIST_FILE = "iAdPlusAdMob/iAdPlusAdMob-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../iAdPlus/Libraries/GoogleAdMobAdsSDKiOS-5.0.5\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		2E5DE4EA151B133D00C8E2BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iAdPlusAdMob.app/iAdPlusAdMob";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iAdPlusAdMob/iAdPlusAdMob-Prefix.pch";
+				INFOPLIST_FILE = "iAdPlusAdMobTests/iAdPlusAdMobTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		2E5DE4EB151B133D00C8E2BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iAdPlusAdMob.app/iAdPlusAdMob";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iAdPlusAdMob/iAdPlusAdMob-Prefix.pch";
+				INFOPLIST_FILE = "iAdPlusAdMobTests/iAdPlusAdMobTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2E5DE4AA151B133C00C8E2BC /* Build configuration list for PBXProject "iAdPlusAdMob" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E5DE4E4151B133D00C8E2BC /* Debug */,
+				2E5DE4E5151B133D00C8E2BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E5DE4E6151B133D00C8E2BC /* Build configuration list for PBXNativeTarget "iAdPlusAdMob" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E5DE4E7151B133D00C8E2BC /* Debug */,
+				2E5DE4E8151B133D00C8E2BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E5DE4E9151B133D00C8E2BC /* Build configuration list for PBXNativeTarget "iAdPlusAdMobTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E5DE4EA151B133D00C8E2BC /* Debug */,
+				2E5DE4EB151B133D00C8E2BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2E5DE4A7151B133C00C8E2BC /* Project object */;
+}
