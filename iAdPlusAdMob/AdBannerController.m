@@ -182,7 +182,6 @@ static AdBannerController *_sharedInstance;
 	//Make the request for a test ad
 	request.testDevices = [NSArray arrayWithObjects:
 						   GAD_SIMULATOR_ID,			// Simulator
-						   @"9d0f6a4c047b333e945c6c1c43cb84feacb60262",
 						   nil];
 	
 	return request;
