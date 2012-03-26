@@ -41,6 +41,7 @@
 @property (nonatomic, strong) GADBannerView *adMobBannerView;
 
 - (void)layoutAnimated:(BOOL)animated;
+- (void)layoutAnimated:(BOOL)animated withInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 
 @end
 
