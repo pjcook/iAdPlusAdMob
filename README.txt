@@ -32,3 +32,15 @@ and also include the following frameworks:
  - CoreGraphics
 
 You can find additional AdMob documentation here if you're interested: https://developers.google.com/mobile-ads-sdk/docs/ios/fundamentals
+
+Once you have added the code library and additional frameworks to your project, the simplest way to configure this library is to add the following code to the top of your application delegate file:
+
++ (void)initialize
+{
+	// Configure AdBannerController
+	[AdBannerController sharedInstance].adMobId = @"Your admob app id here";
+	[AdBannerController sharedInstance].shouldDisplayIAds = YES;
+	[AdBannerController sharedInstance].shouldDisplayAdMobAds = YES;
+}
+
+The static initialize method is only called only during the application life cycle and is therefore the best place to singularly initialize any of your components and libraries.
