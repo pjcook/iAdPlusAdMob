@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E4809E3151C682800058FAE /* AdBannerConstants.h in Resources */ = {isa = PBXBuildFile; fileRef = 2E4809E2151C682800058FAE /* AdBannerConstants.h */; };
 		2E5DE4B5151B133C00C8E2BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5DE4B4151B133C00C8E2BC /* UIKit.framework */; };
 		2E5DE4B7151B133C00C8E2BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5DE4B6151B133C00C8E2BC /* Foundation.framework */; };
 		2E5DE4B9151B133C00C8E2BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5DE4B8151B133C00C8E2BC /* CoreGraphics.framework */; };
@@ -42,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2E4809E2151C682800058FAE /* AdBannerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdBannerConstants.h; sourceTree = "<group>"; };
 		2E5DE4B0151B133C00C8E2BC /* iAdPlusAdMob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iAdPlusAdMob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E5DE4B4151B133C00C8E2BC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2E5DE4B6151B133C00C8E2BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -205,7 +203,6 @@
 				2E5DE4F7151B15E100C8E2BC /* AdBannerController.m */,
 				2E5DE4F8151B15E100C8E2BC /* AdViewController.h */,
 				2E5DE4F9151B15E100C8E2BC /* AdViewController.m */,
-				2E4809E2151C682800058FAE /* AdBannerConstants.h */,
 			);
 			name = iAdPlusAdMob;
 			path = ../../iAdPlusAdMob;
@@ -300,7 +297,6 @@
 				2E5DE4BF151B133C00C8E2BC /* InfoPlist.strings in Resources */,
 				2E5DE4C8151B133C00C8E2BC /* MainStoryboard_iPhone.storyboard in Resources */,
 				2E5DE4CB151B133C00C8E2BC /* MainStoryboard_iPad.storyboard in Resources */,
-				2E4809E3151C682800058FAE /* AdBannerConstants.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

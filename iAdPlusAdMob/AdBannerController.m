@@ -37,6 +37,8 @@
 @interface AdBannerController()
 {
 	id<AdBannerControllerDelegate> _delegate;
+	BOOL _shouldDisplayIAds;
+	BOOL _shouldDisplayAdMobAds;
 }
 
 @property (nonatomic, strong, readwrite) ADBannerView *bannerView;
@@ -56,6 +58,9 @@
 @synthesize delegate = _delegate;
 @synthesize hasIAd;
 @synthesize hasAdMobAd;
+@synthesize adMobId;
+@synthesize shouldDisplayIAds = _shouldDisplayIAds;
+@synthesize shouldDisplayAdMobAds = _shouldDisplayAdMobAds;
 
 - (void)dealloc
 {
@@ -68,20 +73,11 @@
     self = [super init];
     if (self)
     {
-		// create iAd banner
-		if (shouldDisplayIAds)
-		{
-			self.bannerView = [[ADBannerView alloc] init];
-			self.bannerView.delegate = self;
-		}
-		
-		// create admob banner
-		if (shouldDisplayAdMobAds && ![adMobId isEqualToString:@"NoAds"])
-		{
-			self.adMobBannerView = [[GADBannerView alloc] initWithFrame:[self adMobBannerSizeForDisplay]];
-			self.adMobBannerView.delegate = self;
-			self.adMobBannerView.adUnitID = adMobId;
-		}
+		self.bannerView = nil;
+		self.adMobBannerView = nil;
+		self.adMobId = @"NoAds";
+		self.shouldDisplayIAds = NO;
+		self.shouldDisplayAdMobAds = NO;
     }
     return self;
 }
@@ -111,6 +107,51 @@ static AdBannerController *_sharedInstance;
         _sharedInstance.delegate = nil;
         _sharedInstance = nil;
     }
+}
+
+- (void)setShouldDisplayIAds:(BOOL)shouldDisplayIAds
+{
+	_shouldDisplayIAds = shouldDisplayIAds;
+	
+	// create iAd banner
+	if (shouldDisplayIAds)
+	{
+		self.bannerView = [[ADBannerView alloc] init];
+		self.bannerView.delegate = self;
+	}
+	else 
+	{
+		self.bannerView.delegate = nil;
+		self.bannerView = nil;
+	}
+}
+
+- (BOOL)shouldDisplayIAds
+{
+	return _shouldDisplayIAds;
+}
+
+- (void)setShouldDisplayAdMobAds:(BOOL)shouldDisplayAdMobAds
+{
+	_shouldDisplayAdMobAds = shouldDisplayAdMobAds;
+	
+	// create admob banner
+	if (shouldDisplayAdMobAds && ![adMobId isEqualToString:@"NoAds"])
+	{
+		self.adMobBannerView = [[GADBannerView alloc] initWithFrame:[self adMobBannerSizeForDisplay]];
+		self.adMobBannerView.delegate = self;
+		self.adMobBannerView.adUnitID = adMobId;
+	}
+	else 
+	{
+		self.adMobBannerView.delegate = nil;
+		self.adMobBannerView = nil;
+	}
+}
+
+- (BOOL)shouldDisplayAdMobAds
+{
+	return _shouldDisplayAdMobAds;
 }
 
 - (CGRect)adMobBannerSizeForDisplay

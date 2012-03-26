@@ -39,6 +39,7 @@
 
 @property (nonatomic, strong) ADBannerView *bannerView;
 @property (nonatomic, strong) GADBannerView *adMobBannerView;
+@property (nonatomic, strong) UIView *adMobContainer;
 
 - (void)layoutAnimated:(BOOL)animated;
 - (void)layoutAnimated:(BOOL)animated withInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
@@ -49,15 +50,41 @@
 
 @synthesize bannerView;
 @synthesize adMobBannerView;
+@synthesize adMobContainer;
 @synthesize contentView;
+
+- (void)viewDidLoad
+{
+	[super viewDidLoad];
+	CGRect adMobBannerRect = [AdBannerController sharedInstance].adMobBannerView.bounds;
+	adMobBannerRect.size.width = self.view.bounds.size.width;
+	adMobBannerRect.origin.x = 0.0f;
+	adMobBannerRect.origin.y = self.view.bounds.size.height;
+
+	// create a container for the adMob AD banner so that we can align it and give it a background color if required.
+	self.adMobContainer = [[UIView alloc] initWithFrame:adMobBannerRect];
+	
+	// This makes the adMobContainer stretch across the screen as required (landscape mode).
+	self.adMobContainer.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
+	
+	// This applies a background color to the adMobContainer.  This means in landscape mode where the AD doesn't fill the width, you can hide the UI to give a consistent UI.  Set to transparent if not required.
+	self.adMobContainer.backgroundColor = [UIColor redColor];
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-    [AdBannerController sharedInstance].delegate = self;
+    
+	[AdBannerController sharedInstance].delegate = self;
 	self.bannerView = [AdBannerController sharedInstance].bannerView;
 	self.adMobBannerView = [AdBannerController sharedInstance].adMobBannerView;
-	[self.view addSubview:self.adMobBannerView];
+	CGRect adMobRect = self.adMobBannerView.bounds;
+	adMobRect.origin.x = MAX(0.0f, ceil((self.view.frame.size.width - adMobRect.size.width) / 2.0f));
+	adMobBannerView.frame = adMobRect;
+	self.adMobBannerView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+
+	[self.adMobContainer addSubview:self.adMobBannerView];
+	[self.view addSubview:self.adMobContainer];
 	[self.view addSubview:self.bannerView];
 }
 
@@ -75,6 +102,7 @@
 	self.contentView = nil;
 	self.bannerView = nil;
 	self.adMobBannerView = nil;
+	self.adMobContainer = nil;
     [AdBannerController sharedInstance].delegate = nil;
 }
 
@@ -85,7 +113,7 @@
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
-    [self layoutAnimated:duration > 0.0];
+    [self layoutAnimated:duration > 0.0 withInterfaceOrientation:toInterfaceOrientation];
 }
 
 - (void)layoutAnimated:(BOOL)animated
@@ -115,29 +143,25 @@
     }
 	
 	// AdMob logic
-	CGRect adMobRect = self.adMobBannerView.frame;
-	if (UIInterfaceOrientationIsPortrait(interfaceOrientation)) {
-		adMobRect.origin.x = MAX(0.0f, ceil((self.view.frame.size.width - adMobRect.size.width) / 2.0f));
-	} else {
-		adMobRect.origin.x = MAX(0.0f, ceil((self.view.frame.size.height - adMobRect.size.width) / 2.0f));
-	}
+	CGRect adMobContainerFrame = self.adMobContainer.frame;
+	adMobContainerFrame.size.height = self.adMobBannerView.frame.size.height;
 	if (!bannerView.bannerLoaded && [AdBannerController sharedInstance].hasAdMobAd)
 	{
-		contentFrame.size.height -= adMobRect.size.height;
-		adMobRect.origin.y = contentFrame.size.height;
+		contentFrame.size.height -= adMobContainerFrame.size.height;
+		adMobContainerFrame.origin.y = contentFrame.size.height;
 	}
 	else 
 	{
-		adMobRect.origin.y = self.view.bounds.size.height;
+		adMobContainerFrame.origin.y = self.view.bounds.size.height;
 	}
-	NSLog(@"%f %f %f %f", adMobRect.origin.x, adMobRect.origin.y, adMobRect.size.width, self.view.frame.size.width);
+	NSLog(@"%f %f %f %f", self.adMobBannerView.frame.origin.x, self.adMobBannerView.frame.origin.y, self.adMobBannerView.frame.size.width, self.adMobBannerView.frame.size.height);
     
 	// size all the frames to fit
     [UIView animateWithDuration:animated ? 0.25 : 0.0 animations:^{
         contentView.frame = contentFrame;
         [contentView layoutIfNeeded];
         bannerView.frame = bannerFrame;
-		adMobBannerView.frame = adMobRect;
+		self.adMobContainer.frame = adMobContainerFrame;
     }];
 }
 

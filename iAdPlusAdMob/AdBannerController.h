@@ -45,6 +45,9 @@
 @property (nonatomic, strong, readonly) GADBannerView *adMobBannerView;
 @property (nonatomic, assign, readonly) BOOL hasIAd;
 @property (nonatomic, assign, readonly) BOOL hasAdMobAd;
+@property (nonatomic, strong) NSString *adMobId;
+@property (nonatomic, assign) BOOL shouldDisplayIAds;
+@property (nonatomic, assign) BOOL shouldDisplayAdMobAds;
 
 + (AdBannerController *)sharedInstance;
 + (void)removeSharedInstance;

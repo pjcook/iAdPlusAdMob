@@ -7,10 +7,19 @@
 //
 
 #import "AppDelegate.h"
+#import "AdBannerController.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
+
++ (void)initialize
+{
+	// Configure AdBannerController
+	[AdBannerController sharedInstance].adMobId = @"NoAds";
+	[AdBannerController sharedInstance].shouldDisplayIAds = NO;
+	[AdBannerController sharedInstance].shouldDisplayAdMobAds = YES;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
