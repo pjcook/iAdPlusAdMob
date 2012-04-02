@@ -2,13 +2,13 @@
 //  AdBannerController.h
 //
 //  iAdPlusAdMob
-//	Version 1.0.0
+//  Version 1.0.0
 //
 //  Created by PJ Cook on 22/03/2012.
 //  Copyright (c) 2012 Software101. All rights reserved.
 //
 //  Distributed under the permissive zlib License
-//  Get the latest version from either of this location:
+//  Get the latest version from here:
 //
 //  https://github.com/pjcook/iAdPlusAdMob
 //

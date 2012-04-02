@@ -2,13 +2,13 @@
 //  AdBannerController.m
 //
 //  iAdPlusAdMob
-//	Version 1.0.0
+//  Version 1.0.0
 //
 //  Created by PJ Cook on 22/03/2012.
 //  Copyright (c) 2012 Software101. All rights reserved.
 //
 //  Distributed under the permissive zlib License
-//  Get the latest version from either of this location:
+//  Get the latest version from here:
 //
 //  https://github.com/pjcook/iAdPlusAdMob
 //
@@ -34,11 +34,6 @@
 #import "AdBannerController.h"
 
 @interface AdBannerController()
-{
-	id<AdBannerControllerDelegate> _delegate;
-	BOOL _shouldDisplayIAds;
-	BOOL _shouldDisplayAdMobAds;
-}
 
 @property (nonatomic, strong, readwrite) ADBannerView *bannerView;
 @property (nonatomic, strong, readwrite) GADBannerView *adMobBannerView;
@@ -108,49 +103,25 @@ static AdBannerController *_sharedInstance;
     }
 }
 
-- (void)setShouldDisplayIAds:(BOOL)shouldDisplayIAds
+- (ADBannerView *)bannerView
 {
-	_shouldDisplayIAds = shouldDisplayIAds;
-	
-	// create iAd banner
-	if (shouldDisplayIAds)
-	{
-		self.bannerView = [[ADBannerView alloc] init];
-		self.bannerView.delegate = self;
-	}
-	else 
-	{
-		self.bannerView.delegate = nil;
-		self.bannerView = nil;
-	}
+    if (bannerView == nil && _shouldDisplayIAds)
+    {
+        self.bannerView = [[ADBannerView alloc] init];
+		bannerView.delegate = self;
+    }
+    return bannerView;
 }
 
-- (BOOL)shouldDisplayIAds
+- (GADBannerView *)adMobBannerView
 {
-	return _shouldDisplayIAds;
-}
-
-- (void)setShouldDisplayAdMobAds:(BOOL)shouldDisplayAdMobAds
-{
-	_shouldDisplayAdMobAds = shouldDisplayAdMobAds;
-	
-	// create admob banner
-	if (shouldDisplayAdMobAds && ![adMobId isEqualToString:@"NoAds"])
-	{
-		self.adMobBannerView = [[GADBannerView alloc] initWithFrame:[self adMobBannerSizeForDisplay]];
-		self.adMobBannerView.delegate = self;
-		self.adMobBannerView.adUnitID = adMobId;
-	}
-	else 
-	{
-		self.adMobBannerView.delegate = nil;
-		self.adMobBannerView = nil;
-	}
-}
-
-- (BOOL)shouldDisplayAdMobAds
-{
-	return _shouldDisplayAdMobAds;
+    if (adMobBannerView == nil && _shouldDisplayAdMobAds && ![adMobId isEqualToString:@"NoAds"])
+    {
+        self.adMobBannerView = [[GADBannerView alloc] initWithFrame:[self adMobBannerSizeForDisplay]];
+		adMobBannerView.delegate = self;
+		adMobBannerView.adUnitID = adMobId;
+    }
+    return adMobBannerView;
 }
 
 - (CGRect)adMobBannerSizeForDisplay
@@ -162,15 +133,15 @@ static AdBannerController *_sharedInstance;
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) 
 	{
 		rect = CGRectMake(0.0f, mainWindow.bounds.size.height, 
-						   GAD_SIZE_728x90.width, 
-						   GAD_SIZE_728x90.height);
+                          GAD_SIZE_728x90.width, 
+                          GAD_SIZE_728x90.height);
 	}
 	else
 	{
 		rect = CGRectMake(0.0f, 
-						   mainWindow.bounds.size.height, 
-						   GAD_SIZE_320x50.width, 
-						   GAD_SIZE_320x50.height);
+                          mainWindow.bounds.size.height, 
+                          GAD_SIZE_320x50.width, 
+                          GAD_SIZE_320x50.height);
 	}
 	return rect;
 }

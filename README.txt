@@ -43,4 +43,4 @@ Once you have added the code library and additional frameworks to your project, 
 	[AdBannerController sharedInstance].shouldDisplayAdMobAds = YES;
 }
 
-The static initialize method is only called only during the application life cycle and is therefore the best place to singularly initialize any of your components and libraries.
+The static initialize method is only called once during the application life cycle and is therefore the best place to singularly initialize any of your components and libraries.
