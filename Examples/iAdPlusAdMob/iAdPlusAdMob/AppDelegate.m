@@ -16,7 +16,7 @@
 + (void)initialize
 {
 	// Configure AdBannerController
-	[AdBannerController sharedInstance].adMobId = @"NoAds";
+	[AdBannerController sharedInstance].adMobId = @"xxx";
 	[AdBannerController sharedInstance].shouldDisplayIAds = NO;
 	[AdBannerController sharedInstance].shouldDisplayAdMobAds = YES;
 }

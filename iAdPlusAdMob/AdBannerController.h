@@ -2,7 +2,7 @@
 //  AdBannerController.h
 //
 //  iAdPlusAdMob
-//	Version 1.0.0
+//	Version 1.0.1
 //
 //  Created by PJ Cook on 22/03/2012.
 //  Copyright (c) 2012 Software101. All rights reserved.
@@ -34,20 +34,24 @@
 #import <Foundation/Foundation.h>
 #import <iAd/iAd.h>
 #import "GADBannerView.h"
+#import "GADBannerViewDelegate.h"
+#import "GADRequest.h"
+
+extern NSString *const kAdBannerControllerDefaultAdMobId;
 
 @protocol AdBannerControllerDelegate;
 
 @interface AdBannerController : NSObject
     <ADBannerViewDelegate, GADBannerViewDelegate>
 
-@property (nonatomic, strong) id<AdBannerControllerDelegate> delegate;
+@property (nonatomic, weak) id<AdBannerControllerDelegate> delegate;
 @property (nonatomic, strong, readonly) ADBannerView *bannerView;
-@property (nonatomic, strong, readonly) GADBannerView *adMobBannerView;
-@property (nonatomic, assign, readonly) BOOL hasIAd;
-@property (nonatomic, assign, readonly) BOOL hasAdMobAd;
-@property (nonatomic, strong) NSString *adMobId;
-@property (nonatomic, assign) BOOL shouldDisplayIAds;
-@property (nonatomic, assign) BOOL shouldDisplayAdMobAds;
+@property (nonatomic, strong) GADBannerView *adMobBannerView;
+@property (nonatomic, readonly) BOOL hasIAd;
+@property (nonatomic, readonly) BOOL hasAdMobAd;
+@property (nonatomic, copy) NSString *adMobId;
+@property (nonatomic) BOOL shouldDisplayIAds;
+@property (nonatomic) BOOL shouldDisplayAdMobAds;
 
 + (AdBannerController *)sharedInstance;
 + (void)removeSharedInstance;

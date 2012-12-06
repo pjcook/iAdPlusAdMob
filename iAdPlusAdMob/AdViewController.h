@@ -2,7 +2,7 @@
 //  AdViewController.h
 //
 //  iAdPlusAdMob
-//	Version 1.0.0
+//	Version 1.0.1
 //
 //  Created by PJ Cook on 22/03/2012.
 //  Copyright (c) 2012 Software101. All rights reserved.
@@ -38,6 +38,8 @@
 @interface AdViewController : UIViewController
     <AdBannerControllerDelegate>
 
-@property (nonatomic, strong) IBOutlet UIView *contentView;
+@property (nonatomic, weak) IBOutlet UIView *contentView;
+
+- (void)refreshAdView;
 
 @end
