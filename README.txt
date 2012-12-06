@@ -26,10 +26,12 @@ You will need to be logged in to iTunesConnect view these documents.
 You should download the latest AdMob framework from here: https://developers.google.com/mobile-ads-sdk/download
 
 and also include the following frameworks:
+ - StoreKit
  - AudioToolbox
  - MessageUI
  - SystemConfiguration
  - CoreGraphics
+ - AdSupport
 
 You can find additional AdMob documentation here if you're interested: https://developers.google.com/mobile-ads-sdk/docs/ios/fundamentals
 
