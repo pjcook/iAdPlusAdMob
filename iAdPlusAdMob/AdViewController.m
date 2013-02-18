@@ -2,7 +2,7 @@
 //  AdViewController.m
 //
 //  iAdPlusAdMob
-//	Version 1.0.1
+//	Version 1.0.2
 //
 //  Created by PJ Cook on 22/03/2012.
 //  Copyright (c) 2012 Software101. All rights reserved.
@@ -66,6 +66,8 @@
     // Ad AdViews to the UI
 	[self.view addSubview:adController.adMobBannerView];
 	[self.view addSubview:adController.bannerView];
+    
+    [self refreshAdView];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -155,6 +157,14 @@
         [self.contentView layoutIfNeeded];
         adController.bannerView.frame = bannerFrame;
 		adController.adMobBannerView.frame = adMobFrame;
+        if (adController.bannerView.superview)
+        {
+            [adController.bannerView.superview addSubview:adController.bannerView];
+        }
+        if (adController.adMobBannerView.superview)
+        {
+            [adController.adMobBannerView.superview addSubview:adController.adMobBannerView];
+        }
     }];
 }
 

@@ -2,7 +2,7 @@
 //  AdBannerController.m
 //
 //  iAdPlusAdMob
-//	Version 1.0.1
+//	Version 1.0.2
 //
 //  Created by PJ Cook on 22/03/2012.
 //  Copyright (c) 2012 Software101. All rights reserved.
@@ -48,10 +48,13 @@ NSString *const kAdBannerControllerDefaultAdMobId = @"NoAds";
 
 @implementation AdBannerController
 
-@synthesize shouldDisplayIAds = _shouldDisplayIAds;
-@synthesize shouldDisplayAdMobAds = _shouldDisplayAdMobAds;
-@synthesize delegate = _delegate;
-@synthesize adMobId = _adMobId;
+@dynamic shouldDisplayIAds;
+@dynamic shouldDisplayAdMobAds;
+@dynamic delegate;
+
+BOOL _shouldDisplayIAds;
+BOOL _shouldDisplayAdMobAds;
+id<AdBannerControllerDelegate> _delegate;
 
 - (id)init
 {
