@@ -15,7 +15,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Configure AdBannerController
-	[AdBannerController sharedInstance].adMobId = @"a1512299283692f";
+	[AdBannerController sharedInstance].adMobId = @"xxxxxxxxxx";
 	[AdBannerController sharedInstance].shouldDisplayIAds = YES;
 	[AdBannerController sharedInstance].shouldDisplayAdMobAds = YES;
 
