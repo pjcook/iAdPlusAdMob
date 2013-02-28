@@ -77,8 +77,6 @@
     // Clean up AdViews
     AdBannerController *adController = [AdBannerController sharedInstance];
 	adController.delegate = nil;
-    [adController.adMobBannerView removeFromSuperview];
-    [adController.bannerView removeFromSuperview];
 }
 
 - (void)viewDidUnload
@@ -118,7 +116,7 @@
         adController.bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierLandscape;
     }
     
-    CGRect frame = self.view.bounds;
+    CGRect frame = self.view.frame;
     CGRect contentFrame = frame;
     CGRect bannerFrame = adController.bannerView.frame;
     if (adController.bannerView.bannerLoaded)
@@ -148,7 +146,8 @@
 	{
 		adMobFrame.origin.y = frame.size.height;
 	}
-	NSLog(@"%f %f %f %f", adController.adMobBannerView.frame.origin.x, adController.adMobBannerView.frame.origin.y, adController.adMobBannerView.frame.size.width, adController.adMobBannerView.frame.size.height);
+	//NSLog(@"iAd:%f %f %f %f", bannerFrame.origin.x, bannerFrame.origin.y, bannerFrame.size.width, bannerFrame.size.height);
+	//NSLog(@"Adm:%f %f %f %f", adMobFrame.origin.x, adMobFrame.origin.y, adMobFrame.size.width, adMobFrame.size.height);
     
 	// size all the frames to fit
     [UIView animateWithDuration:animated ? 0.25 : 0.0 animations:^
@@ -157,13 +156,23 @@
         [self.contentView layoutIfNeeded];
         adController.bannerView.frame = bannerFrame;
 		adController.adMobBannerView.frame = adMobFrame;
+        //NSLog(@"iAd has superview:%@", adController.bannerView.superview ? @"YES" : @"NO");
         if (adController.bannerView.superview)
         {
             [adController.bannerView.superview addSubview:adController.bannerView];
         }
+        else
+        {
+            [self.view addSubview:adController.bannerView];
+        }
+        //NSLog(@"Admob has superview:%@", adController.adMobBannerView.superview ? @"YES" : @"NO");
         if (adController.adMobBannerView.superview)
         {
             [adController.adMobBannerView.superview addSubview:adController.adMobBannerView];
+        }
+        else
+        {
+            [self.view addSubview:adController.adMobBannerView];
         }
     }];
 }
