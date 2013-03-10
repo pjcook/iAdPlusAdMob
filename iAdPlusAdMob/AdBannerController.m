@@ -138,7 +138,7 @@ static AdBannerController *_sharedInstance;
 - (GADRequest *)createAdMobRequest
 {
 	GADRequest *request = [GADRequest request];
-	
+	request.testDevices = [NSArray arrayWithObjects:GAD_SIMULATOR_ID, nil];
 	return request;
 }
 
