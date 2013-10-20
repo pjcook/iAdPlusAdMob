@@ -2,7 +2,7 @@
 //  AdBannerController.m
 //
 //  iAdPlusAdMob
-//	Version 1.0.4
+//	Version 1.0.5
 //
 //  Created by PJ Cook on 22/03/2012.
 //  Copyright (c) 2012 Software101. All rights reserved.
@@ -38,7 +38,6 @@ NSString *const kAdBannerControllerDefaultAdMobId = @"NoAds";
 @interface AdBannerController()
 
 @property (nonatomic, strong, readwrite) ADBannerView *bannerView;
-//@property (nonatomic, strong, readwrite) GADBannerView *adMobBannerView;
 @property (nonatomic, readwrite) BOOL hasIAd;
 @property (nonatomic, readwrite) BOOL hasAdMobAd;
 
@@ -47,14 +46,6 @@ NSString *const kAdBannerControllerDefaultAdMobId = @"NoAds";
 @end
 
 @implementation AdBannerController
-
-@dynamic shouldDisplayIAds;
-@dynamic shouldDisplayAdMobAds;
-@dynamic delegate;
-
-BOOL _shouldDisplayIAds;
-BOOL _shouldDisplayAdMobAds;
-id<AdBannerControllerDelegate> _delegate;
 
 - (id)init
 {
@@ -90,49 +81,38 @@ static AdBannerController *_sharedInstance;
     }
 }
 
-- (void)setShouldDisplayIAds:(BOOL)shouldDisplayIAds
+- (ADBannerView *)bannerView
 {
-	_shouldDisplayIAds = shouldDisplayIAds;
-	
-	// create iAd banner
-	if (shouldDisplayIAds)
+    // create iAd banner
+	if (_bannerView == nil && _shouldDisplayIAds)
 	{
-		self.bannerView = [[ADBannerView alloc] init];
-		self.bannerView.delegate = self;
+		_bannerView = [ADBannerView new];
+		_bannerView.delegate = self;
 	}
-	else 
-	{
-		self.bannerView.delegate = nil;
-		self.bannerView = nil;
-	}
+    else if (_bannerView && _shouldDisplayIAds == NO)
+    {
+        _bannerView.delegate = nil;
+        _bannerView = nil;
+    }
+
+    return _bannerView;
 }
 
-- (BOOL)shouldDisplayIAds
+- (GADBannerView *)adMobBannerView
 {
-	return _shouldDisplayIAds;
-}
-
-- (void)setShouldDisplayAdMobAds:(BOOL)shouldDisplayAdMobAds
-{
-	_shouldDisplayAdMobAds = shouldDisplayAdMobAds;
-	
-	// create admob banner
-	if (shouldDisplayAdMobAds && ![_adMobId isEqualToString:kAdBannerControllerDefaultAdMobId])
+    // create admob banner
+	if (_adMobBannerView == nil && _shouldDisplayAdMobAds && ![_adMobId isEqualToString:kAdBannerControllerDefaultAdMobId])
 	{
-		self.adMobBannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
-		self.adMobBannerView.delegate = self;
-		self.adMobBannerView.adUnitID = _adMobId;
+		_adMobBannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+		_adMobBannerView.delegate = self;
+		_adMobBannerView.adUnitID = _adMobId;
 	}
-	else 
+	else if (_adMobBannerView && _shouldDisplayAdMobAds == NO)
 	{
-		self.adMobBannerView.delegate = nil;
-		self.adMobBannerView = nil;
+		_adMobBannerView.delegate = nil;
+		_adMobBannerView = nil;
 	}
-}
-
-- (BOOL)shouldDisplayAdMobAds
-{
-	return _shouldDisplayAdMobAds;
+    return _adMobBannerView;
 }
 
 - (GADRequest *)createAdMobRequest
@@ -142,22 +122,17 @@ static AdBannerController *_sharedInstance;
 	return request;
 }
 
-- (void)setDelegate:(id<AdBannerControllerDelegate>)adelegate
+- (void)setDelegate:(id<AdBannerControllerDelegate>)delegate
 {
-	_delegate = adelegate;
+	_delegate = delegate;
 	if (_shouldDisplayAdMobAds)
 	{
 		self.adMobBannerView.rootViewController = (UIViewController *)_delegate;
-		if (_delegate != nil)
+		if (_delegate)
 		{
 			[self.adMobBannerView loadRequest:[self createAdMobRequest]];
 		}
 	}
-}
-
-- (id<AdBannerControllerDelegate>)delegate
-{
-	return _delegate;
 }
 
 #pragma -

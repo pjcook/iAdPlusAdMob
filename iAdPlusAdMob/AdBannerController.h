@@ -2,7 +2,7 @@
 //  AdBannerController.h
 //
 //  iAdPlusAdMob
-//	Version 1.0.4
+//	Version 1.0.5
 //
 //  Created by PJ Cook on 22/03/2012.
 //  Copyright (c) 2012 Software101. All rights reserved.
@@ -44,7 +44,7 @@ extern NSString *const kAdBannerControllerDefaultAdMobId;
 @interface AdBannerController : NSObject
     <ADBannerViewDelegate, GADBannerViewDelegate>
 
-@property (nonatomic, weak) id<AdBannerControllerDelegate> delegate;
+@property (nonatomic, assign) id<AdBannerControllerDelegate> delegate;
 @property (nonatomic, strong, readonly) ADBannerView *bannerView;
 @property (nonatomic, strong) GADBannerView *adMobBannerView;
 @property (nonatomic, readonly) BOOL hasIAd;
