@@ -16,9 +16,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Configure AdBannerController
-	[AdBannerController sharedInstance].adMobId = @"a14f701a909c3f4";
+	[AdBannerController sharedInstance].adMobId = @"xxxxxxxxxx";
 	[AdBannerController sharedInstance].shouldDisplayIAds = YES;
-	[AdBannerController sharedInstance].shouldDisplayAdMobAds = YES;
+	[AdBannerController sharedInstance].shouldDisplayAdMobAds = NO;
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.

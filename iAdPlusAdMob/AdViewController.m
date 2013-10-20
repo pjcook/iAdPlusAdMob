@@ -111,11 +111,6 @@
 
 	// iAd logic
     [adController.bannerView sizeThatFits:self.view.frame.size];
-//    if (UIInterfaceOrientationIsPortrait(interfaceOrientation)) {
-//        adController.bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
-//    } else {
-//        adController.bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierLandscape;
-//    }
     
     CGFloat tabBarAdjustment = 0.0f;
     if (self.tabBarController && self.tabBarController.tabBar.isTranslucent)
@@ -163,7 +158,7 @@
         [self.contentView layoutIfNeeded];
         adController.bannerView.frame = bannerFrame;
 		adController.adMobBannerView.frame = adMobFrame;
-        NSLog(@"iAd has superview:%@", adController.bannerView.superview ? @"YES" : @"NO");
+        //NSLog(@"iAd has superview:%@", adController.bannerView.superview ? @"YES" : @"NO");
         if (adController.bannerView.superview)
         {
             [adController.bannerView.superview addSubview:adController.bannerView];
@@ -172,7 +167,7 @@
         {
             [self.view addSubview:adController.bannerView];
         }
-        NSLog(@"Admob has superview:%@", adController.adMobBannerView.superview ? @"YES" : @"NO");
+        //NSLog(@"Admob has superview:%@", adController.adMobBannerView.superview ? @"YES" : @"NO");
         if (adController.adMobBannerView.superview)
         {
             [adController.adMobBannerView.superview addSubview:adController.adMobBannerView];
