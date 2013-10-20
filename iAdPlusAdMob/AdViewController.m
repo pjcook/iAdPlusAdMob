@@ -2,7 +2,7 @@
 //  AdViewController.m
 //
 //  iAdPlusAdMob
-//	Version 1.0.3
+//	Version 1.0.4
 //
 //  Created by PJ Cook on 22/03/2012.
 //  Copyright (c) 2012 Software101. All rights reserved.
@@ -110,10 +110,17 @@
     AdBannerController *adController = [AdBannerController sharedInstance];
 
 	// iAd logic
-    if (UIInterfaceOrientationIsPortrait(interfaceOrientation)) {
-        adController.bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
-    } else {
-        adController.bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierLandscape;
+    [adController.bannerView sizeThatFits:self.view.frame.size];
+//    if (UIInterfaceOrientationIsPortrait(interfaceOrientation)) {
+//        adController.bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
+//    } else {
+//        adController.bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierLandscape;
+//    }
+    
+    CGFloat tabBarAdjustment = 0.0f;
+    if (self.tabBarController && self.tabBarController.tabBar.isTranslucent)
+    {
+        tabBarAdjustment = self.tabBarController.tabBar.frame.size.height;
     }
     
     CGRect frame = self.view.frame;
@@ -122,7 +129,7 @@
     if (adController.bannerView.bannerLoaded)
 	{
         contentFrame.size.height = frame.size.height - frame.size.height;
-        bannerFrame.origin.y = frame.size.height - bannerFrame.size.height;
+        bannerFrame.origin.y = frame.size.height - bannerFrame.size.height - tabBarAdjustment;
     } 
 	else 
 	{
@@ -140,7 +147,7 @@
 	if (!adController.bannerView.bannerLoaded && adController.hasAdMobAd)
 	{
 		contentFrame.size.height = frame.size.height - adMobFrame.size.height;
-		adMobFrame.origin.y = frame.size.height - adMobFrame.size.height;
+		adMobFrame.origin.y = frame.size.height - adMobFrame.size.height - tabBarAdjustment;
 	}
 	else 
 	{
@@ -156,7 +163,7 @@
         [self.contentView layoutIfNeeded];
         adController.bannerView.frame = bannerFrame;
 		adController.adMobBannerView.frame = adMobFrame;
-        //NSLog(@"iAd has superview:%@", adController.bannerView.superview ? @"YES" : @"NO");
+        NSLog(@"iAd has superview:%@", adController.bannerView.superview ? @"YES" : @"NO");
         if (adController.bannerView.superview)
         {
             [adController.bannerView.superview addSubview:adController.bannerView];
@@ -165,7 +172,7 @@
         {
             [self.view addSubview:adController.bannerView];
         }
-        //NSLog(@"Admob has superview:%@", adController.adMobBannerView.superview ? @"YES" : @"NO");
+        NSLog(@"Admob has superview:%@", adController.adMobBannerView.superview ? @"YES" : @"NO");
         if (adController.adMobBannerView.superview)
         {
             [adController.adMobBannerView.superview addSubview:adController.adMobBannerView];

@@ -2,7 +2,7 @@
 //  AdViewController.h
 //
 //  iAdPlusAdMob
-//	Version 1.0.3
+//	Version 1.0.4
 //
 //  Created by PJ Cook on 22/03/2012.
 //  Copyright (c) 2012 Software101. All rights reserved.
